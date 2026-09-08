@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#ff6fae">
+<title>For Vanshi ♡ — From Yuvi</title>
+<style>
+:root{
+  --pink:#ff6fae; --rose:#ff9fc7; --cream:#fff7fb; --ink:#352333;
+  --purple:#8f72ff; --peach:#ffc59b; --card:rgba(255,255,255,.72);
+  --shadow:0 20px 55px rgba(80,35,70,.15);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;color:var(--ink);font-family:ui-rounded,"Trebuchet MS",system-ui,sans-serif;
+  background:
+    radial-gradient(circle at 10% 10%, #ffd9e9 0 12%, transparent 30%),
+    radial-gradient(circle at 90% 20%, #e7dcff 0 10%, transparent 28%),
+    linear-gradient(180deg,#fff8fc,#fff2f8 45%,#f7f2ff);
+  overflow-x:hidden;
+}
+button,a{font:inherit}
+a{text-decoration:none;color:inherit}
+#sparkles{position:fixed;inset:0;pointer-events:none;z-index:20;overflow:hidden}
+.spark{position:absolute;animation:float 7s linear infinite;opacity:.65}
+@keyframes float{0%{transform:translateY(110vh) rotate(0);opacity:0}15%{opacity:.8}100%{transform:translateY(-15vh) rotate(360deg);opacity:0}}
+nav{
+  position:fixed;top:14px;left:50%;transform:translateX(-50%);z-index:15;
+  display:flex;gap:6px;padding:7px;border:1px solid rgba(255,255,255,.7);
+  background:rgba(255,255,255,.62);backdrop-filter:blur(18px);border-radius:999px;
+  box-shadow:0 10px 30px rgba(90,40,80,.12);max-width:94vw;overflow:auto;
+}
+nav a{padding:9px 13px;border-radius:999px;font-size:.82rem;white-space:nowrap}
+nav a:hover{background:#fff;color:var(--pink)}
+section{max-width:1100px;margin:auto;padding:90px 20px}
+.hero{min-height:100svh;display:grid;place-items:center;text-align:center;padding-top:100px;position:relative}
+.hero-card{
+  width:min(900px,100%);padding:35px 20px;border-radius:38px;
+  background:linear-gradient(135deg,rgba(255,255,255,.82),rgba(255,255,255,.42));
+  border:1px solid rgba(255,255,255,.85);box-shadow:var(--shadow);backdrop-filter:blur(14px);
+}
+.kicker{letter-spacing:.18em;text-transform:uppercase;font-weight:800;color:#a65a87;font-size:.78rem}
+h1{font-size:clamp(3.2rem,14vw,8rem);line-height:.86;margin:18px 0 15px;letter-spacing:-.07em}
+.gradient{background:linear-gradient(90deg,#ff4f9a,#9a72ff,#ff7a9d);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{font-size:clamp(1rem,3vw,1.25rem);max-width:620px;margin:0 auto 25px;line-height:1.7}
+.cta-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.btn{
+  border:0;cursor:pointer;padding:13px 19px;border-radius:999px;font-weight:800;
+  background:#fff;box-shadow:0 10px 25px rgba(90,40,80,.12);color:var(--ink);transition:.2s;
+}
+.btn:hover{transform:translateY(-3px)}
+.btn.primary{background:linear-gradient(135deg,#ff5fa8,#9c79ff);color:white}
+.scroll{margin-top:28px;font-size:.85rem;opacity:.65}
+.section-title{text-align:center;margin-bottom:35px}
+.section-title h2{font-size:clamp(2rem,7vw,4rem);margin:8px 0}
+.section-title p{opacity:.7}
+.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.photo{
+  border:0;padding:0;background:none;cursor:pointer;border-radius:24px;overflow:hidden;
+  box-shadow:var(--shadow);min-height:250px;position:relative;
+}
+.photo:nth-child(2){transform:translateY(28px)} .photo:nth-child(4){transform:translateY(16px)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;transition:.45s}
+.photo:hover img{transform:scale(1.06)}
+.photo span{position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,.82);backdrop-filter:blur(8px);padding:7px 10px;border-radius:999px;font-size:.75rem;font-weight:800}
+.video-card{
+  background:var(--card);border:1px solid white;border-radius:30px;padding:12px;box-shadow:var(--shadow);
+}
+video{width:100%;display:block;border-radius:22px;max-height:75svh;background:#1f1720}
+.notes{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.note{
+  background:rgba(255,255,255,.78);border:1px solid white;border-radius:26px;padding:24px;
+  box-shadow:var(--shadow);cursor:pointer;min-height:210px;transition:.25s;
+}
+.note:hover{transform:translateY(-5px) rotate(-.5deg)}
+.note .emoji{font-size:2rem}.note h3{margin:12px 0 8px}.note p{line-height:1.7;opacity:.8}
+.secret{
+  max-width:760px;margin:auto;text-align:center;background:linear-gradient(135deg,#fff,#fff1f8);
+  border-radius:32px;padding:30px;box-shadow:var(--shadow);border:1px solid white;
+}
+#secretMessage{display:none;margin-top:20px;padding:20px;border-radius:20px;background:#fff8fc;line-height:1.8}
+.chaos-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.chaos{
+  border-radius:28px;padding:25px;background:linear-gradient(135deg,#fff,#f3eeff);
+  border:1px solid white;box-shadow:var(--shadow)
+}
+.chaos h3{font-size:1.4rem}.meter{height:10px;background:#eee5ef;border-radius:99px;overflow:hidden}.meter i{display:block;height:100%;width:92%;background:linear-gradient(90deg,#ff72a9,#9c78ff);border-radius:99px}
+.timeline{position:relative;max-width:760px;margin:auto}.timeline:before{content:"";position:absolute;left:15px;top:0;bottom:0;width:3px;background:linear-gradient(#ff78ad,#9b7aff)}
+.t-item{position:relative;padding:0 0 28px 50px}.dot{position:absolute;left:8px;top:4px;width:17px;height:17px;border-radius:50%;background:#fff;border:4px solid #ff70aa}
+.t-item h3{margin:0 0 6px}.t-item p{margin:0;opacity:.75;line-height:1.6}
+footer{text-align:center;padding:70px 20px 100px}.footer-heart{font-size:3rem}
+.modal{position:fixed;inset:0;background:rgba(35,20,35,.55);backdrop-filter:blur(10px);display:none;place-items:center;z-index:30;padding:18px}
+.modal.show{display:grid}.modal-box{max-width:800px;width:100%;background:#fff8fc;border-radius:30px;padding:18px;box-shadow:0 30px 90px rgba(0,0,0,.25);position:relative}
+.modal-box img{width:100%;max-height:78svh;object-fit:contain;border-radius:20px}.close{position:absolute;right:14px;top:14px;border:0;border-radius:50%;width:40px;height:40px;background:white;cursor:pointer;font-size:1.2rem}
+.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%) translateY(30px);opacity:0;z-index:40;background:#2d2030;color:white;padding:13px 18px;border-radius:999px;transition:.3s;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%)}
+.confetti{position:fixed;top:-20px;z-index:50;animation:drop 2.5s ease-in forwards;pointer-events:none}
+@keyframes drop{to{transform:translateY(110vh) rotate(720deg);opacity:0}}
+@media(max-width:760px){
+  nav{bottom:12px;top:auto}.gallery{grid-template-columns:1fr 1fr}.photo{min-height:210px}.photo:nth-child(2),.photo:nth-child(4){transform:none}
+  .notes{grid-template-columns:1fr}.chaos-grid{grid-template-columns:1fr}
+  section{padding:75px 15px}.hero-card{padding:32px 15px;border-radius:28px}
+  h1{font-size:clamp(3.5rem,19vw,6rem)}
+}
+</style>
+</head>
+<body>
+<div id="sparkles"></div>
+
+<nav aria-label="Main navigation">
+  <a href="#home">🏠</a><a href="#memories">📸 Memories</a><a href="#video">🎥 Video</a>
+  <a href="#notes">💌 Notes</a><a href="#chaos">😂 Chaos</a><a href="#secret">🔐 Secret</a>
+</nav>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-card">
+    <div class="kicker">A tiny internet corner made by Yuvi</div>
+    <h1>Happy Birthday<br><span class="gradient">Vanshi ♡</span></h1>
+    <p>For the girl who somehow manages to be my best friend, my favourite headache, and occasionally… a pineapple. 🍍</p>
+    <div class="cta-row">
+      <button class="btn primary" onclick="celebrate()">🎉 Open the birthday magic</button>
+      <a class="btn" href="#memories">📸 Start the memories</a>
+    </div>
+    <div class="scroll">↓ there are surprises hidden around here ↓</div>
+  </div>
+</section>
+
+<section id="memories">
+  <div class="section-title">
+    <div class="kicker">Chapter 01</div><h2>Our little memory wall 📸</h2>
+    <p>Tap a photo. Yes, I picked these very carefully. Mostly.</p>
+  </div>
+  <div class="gallery">
+    <button class="photo" onclick="openPhoto('assets/memory-1.jpg','Certified chaos duo ✨')"><img src="assets/memory-1.jpg" alt="A memory"><span>chaos duo ✨</span></button>
+    <button class="photo" onclick="openPhoto('assets/memory-2.jpg','The legendary disguise era 😂')"><img src="assets/memory-2.jpg" alt="A memory"><span>disguise era 😂</span></button>
+    <button class="photo" onclick="openPhoto('assets/memory-3.jpg','One of those memories I want to keep forever ♡')"><img src="assets/memory-3.jpg" alt="A memory"><span>keep forever ♡</span></button>
+    <button class="photo" onclick="openPhoto('assets/memory-4.jpg','Just us being us.')"><img src="assets/memory-4.jpg" alt="A memory"><span>just us 🫶</span></button>
+  </div>
+</section>
+
+<section id="video">
+  <div class="section-title"><div class="kicker">Chapter 02</div><h2>Press play 🎥</h2><p>A little moving memory, because photos aren't enough.</p></div>
+  <div class="video-card"><video controls playsinline preload="metadata"><source src="assets/birthday-video.mp4" type="video/mp4">Your browser doesn't support this video.</video></div>
+</section>
+
+<section id="notes">
+  <div class="section-title"><div class="kicker">Chapter 03</div><h2>Things I should probably say more often 💌</h2><p>Tap any card for a tiny reminder.</p></div>
+  <div class="notes">
+    <article class="note" onclick="note('♡','You make ordinary days feel like memories worth keeping.','Some people are just part of your life. You are one of the people who makes life better by being in it.')">
+      <div class="emoji">♡</div><h3>For Vanshi</h3><p>There is a lot I could write...</p>
+    </article>
+    <article class="note" onclick="note('🫶','Thank you for being you.','For the laughs, random conversations, stupid jokes, shared moments, and all the little things that somehow became our memories.')">
+      <div class="emoji">🫶</div><h3>Thank you</h3><p>For all the little things...</p>
+    </article>
+    <article class="note" onclick="note('🌷','I hope this year is ridiculously good to you.','I hope you get more reasons to smile, more moments you never want to end, and everything you secretly wish for.')">
+      <div class="emoji">🌷</div><h3>For your year</h3><p>A wish from Yuvi...</p>
+    </article>
+  </div>
+</section>
+
+<section id="chaos">
+  <div class="section-title"><div class="kicker">Chapter 04</div><h2>The Vanshi Report™ 😂</h2><p>Completely scientific. Definitely not made up.</p></div>
+  <div class="chaos-grid">
+    <div class="chaos"><h3>Headache level</h3><div class="meter"><i></i></div><p>92% — somehow still my favourite.</p></div>
+    <div class="chaos"><h3>Randomness</h3><div class="meter"><i style="width:99%"></i></div><p>99% — pineapple behaviour detected. 🍍</p></div>
+    <div class="chaos"><h3>Best-friend energy</h3><div class="meter"><i style="width:100%"></i></div><p>100% — no further questions.</p></div>
+    <div class="chaos"><h3>Ability to make Yuvi laugh</h3><div class="meter"><i style="width:97%"></i></div><p>Dangerously high.</p></div>
+  </div>
+</section>
+
+<section id="timeline">
+  <div class="section-title"><div class="kicker">Chapter 05</div><h2>Little moments, big memories 🗓️</h2><p>No dates needed. The moments are what matter.</p></div>
+  <div class="timeline">
+    <div class="t-item"><div class="dot"></div><h3>Then — we became us</h3><p>Somehow a bunch of normal days turned into a collection of memories I wouldn't trade.</p></div>
+    <div class="t-item"><div class="dot"></div><h3>Meanwhile — absolute chaos</h3><p>There were laughs, weird photos, questionable decisions and enough inside jokes to confuse everyone else.</p></div>
+    <div class="t-item"><div class="dot"></div><h3>Now — birthday girl mode</h3><p>Today gets one simple rule: Vanshi gets to be celebrated. 🎂</p></div>
+    <div class="t-item"><div class="dot"></div><h3>Next — more memories</h3><p>More photos. More laughs. More random nonsense. More “remember when…” stories.</p></div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="secret">
+    <div class="kicker">Top Secret</div>
+    <h2>🔐 One last thing...</h2>
+    <p>There is a message here that only the birthday girl is supposed to read.</p>
+    <button class="btn primary" onclick="unlock()">🍍 Unlock the pineapple vault</button>
+    <div id="secretMessage">
+      <strong>Dear Vanshi,</strong><br><br>
+      Happy Birthday. ♡<br><br>
+      I hope you know how genuinely special you are to me. I don't need a perfect reason or a dramatic speech to explain it — I just know that having you as my best friend has made a lot of days brighter and a lot of memories funnier.<br><br>
+      So here's to you: your laugh, your randomness, your “headache” moments, your pineapple moments, and every little thing that makes you <em>you</em>.<br><br>
+      Keep being the person you are. Keep laughing. Keep annoying me just enough to maintain the friendship contract. 😂<br><br>
+      <strong>Happy Birthday, Vanshi. From your Yuvi ♡</strong>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="footer-heart">💗</div>
+  <h2>Made with way too much effort for Vanshi.</h2>
+  <p>— Yuvi</p>
+  <button class="btn" onclick="celebrate()">🎉 One more celebration</button>
+</footer>
+
+<div class="modal" id="modal" onclick="closeModal(event)">
+  <div class="modal-box">
+    <button class="close" onclick="closeModal()">×</button>
+    <img id="modalImg" src="" alt="">
+    <h3 id="modalCaption"></h3>
+  </div>
+</div>
+<div class="modal" id="noteModal" onclick="closeNote(event)">
+  <div class="modal-box" style="text-align:center;padding:35px">
+    <button class="close" onclick="closeNote()">×</button>
+    <div id="noteEmoji" style="font-size:3rem"></div>
+    <h2 id="noteTitle"></h2>
+    <p id="noteText" style="line-height:1.8"></p>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+function makeSparkles(){
+  const box=document.getElementById('sparkles');
+  const chars=['♡','✦','✧','·','🍍','💗'];
+  for(let i=0;i<28;i++){
+    const s=document.createElement('span'); s.className='spark';
+    s.textContent=chars[Math.floor(Math.random()*chars.length)];
+    s.style.left=Math.random()*100+'%';
+    s.style.animationDelay=(Math.random()*7)+'s';
+    s.style.animationDuration=(5+Math.random()*7)+'s';
+    s.style.fontSize=(10+Math.random()*18)+'px';
+    box.appendChild(s);
+  }
+}
+function celebrate(){
+  for(let i=0;i<75;i++){
+    const c=document.createElement('div'); c.className='confetti';
+    c.textContent=['🎉','💗','✨','♡','🍍','🎂'][Math.floor(Math.random()*6)];
+    c.style.left=Math.random()*100+'vw';
+    c.style.fontSize=(12+Math.random()*18)+'px';
+    c.style.animationDuration=(1.5+Math.random()*2)+'s';
+    c.style.animationDelay=(Math.random()*.5)+'s';
+    document.body.appendChild(c); setTimeout(()=>c.remove(),4000);
+  }
+  toast('HAPPY BIRTHDAY VANSHI!!! 🎂💗');
+}
+function toast(t){
+  const x=document.getElementById('toast');x.textContent=t;x.classList.add('show');
+  setTimeout(()=>x.classList.remove('show'),2400);
+}
+function openPhoto(src,caption){
+  document.getElementById('modalImg').src=src;
+  document.getElementById('modalCaption').textContent=caption;
+  document.getElementById('modal').classList.add('show');
+}
+function closeModal(e){
+  if(!e || e.target.id==='modal' || e.target.classList.contains('close')) document.getElementById('modal').classList.remove('show');
+}
+function note(emoji,title,text){
+  document.getElementById('noteEmoji').textContent=emoji;
+  document.getElementById('noteTitle').textContent=title;
+  document.getElementById('noteText').textContent=text;
+  document.getElementById('noteModal').classList.add('show');
+}
+function closeNote(e){
+  if(!e || e.target.id==='noteModal' || e.target.classList.contains('close')) document.getElementById('noteModal').classList.remove('show');
+}
+function unlock(){
+  const m=document.getElementById('secretMessage');
+  m.style.display='block';
+  celebrate();
+  setTimeout(()=>m.scrollIntoView({behavior:'smooth',block:'center'}),150);
+}
+makeSparkles();
+</script>
+</body>
+</html>
